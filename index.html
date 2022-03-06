@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Title</title>
+</head>
+<body>
+<div id="wrapper" class="wrapper">
+    <div> <h1>Speech Recognition - Dictaphone</h1>
+    <textarea id="final_text" cols="30" rows="10" placeholder="Здесь отображается синтезируемый из голоса текст"></textarea>
+    <input type="text" id="interim_text" placeholder="Здесь начинается первоначальная обработка текста"/>
+    <div id="buttons">
+        <button class="start">Старт</button>
+        <button class="stop">Стоп</button>
+        <button class="abort">Сброс</button>
+        <button class="copy">Копия</button>
+        <button class="clear">Очистить</button>
+    </div>
+    </div>
+    <div class="prompt">
+        <h1> <strong>Текст подсказки(отобразится когда нажмешь кнопку старт и четко произнесешь "коммерческое предложение")</strong> </h1>
+        <div class="commerce"></div>
+    </div>
+</div>
+    <script src="app.js"></script>
+
+</body>
+</html>
