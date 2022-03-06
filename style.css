@@ -16,7 +16,7 @@ html {
 
 .wrapper {
     margin: 1rem auto;
-    max-width: 340px;
+    min-width: 320px;
     display: grid;
     justify-content: space-between;
     background: aqua;
@@ -73,4 +73,6 @@ button:focus {
 }
 .commerce > p{
     border: 3px solid black;
+    color: #fdfdfd;
+
 }
