@@ -25,22 +25,22 @@ html {
 h1 {
     margin-bottom: 1.5rem;
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 28px;
 }
 
 textarea {
-    width: 90%;
+    width: 98%;
     margin-left: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    border-radius: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
     padding: 0.5rem;
 }
 
 input {
-    width: 100%;
+    width: 98%;
     margin-top: 0.25rem;
     margin-left: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.25);
+    border: 1px solid black;
     padding: 0.5rem;
     border-radius: 2px;
     font-size: 0.9rem;
@@ -49,34 +49,46 @@ input {
 #buttons {
     margin-top: 1.5rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 button {
-    font-size: 0.95rem;
+    font-size: 28px;
     width: 150px;
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    border-radius: 2px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-    padding: 10px;
+    margin: 10px 10px 10px 0;
 }
 
 button:active {
     box-shadow: none;
 
 }
+button:hover {
+    background-color: #262626;
+    color: white;
+}
 button:focus {
     background-color: #262626;
     color: white;
 }
 .prompt {
-    background-color: crimson;
-    color: #262626;
+    background-color: #fdfdfd;
+    color: black;
     margin-left: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+
 }
 .commerce > p{
     border: 3px solid black;
-    color: #fdfdfd;
-
+    border-radius: 5px;
+    color: black;
+    font-size: 28px;
+}
+.prompt > h1{
+    font-size: 28px;
 }

@@ -20,7 +20,7 @@ recognition.onend = () => {
     if (!recognizing) return;
     recognition.start();
 };
-const array = ['коммерческое предложение']
+const array = []
 recognition.onresult = (e) => {
     let interim_transcript = "";
     for (let i = e.resultIndex; i < e.results.length; i++) {
