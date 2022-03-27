@@ -1,94 +1,42 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-    color: #262626;
-    font-size: 1rem;
+body {
+    position: relative;
+    height: 100vh;
+    background-color: gray;
 }
-
-html {
-    font-size: 16px;
-    background-color: #fdfdfd;
+.header {
+    color: white;
+    font-size: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
-
 .wrapper {
-    margin: 1rem auto;
-    min-width: 320px;
-    display: grid;
-    justify-content: space-between;
-    background: aqua;
-}
 
-h1 {
-    margin-bottom: 1.5rem;
+    margin: 0 auto;
     text-align: center;
-    font-size: 28px;
 }
 
-textarea {
-    width: 98%;
-    margin-left: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 0.5rem;
-}
-
-input {
-    width: 98%;
-    margin-top: 0.25rem;
-    margin-left: 10px;
-    border: 1px solid black;
-    padding: 0.5rem;
-    border-radius: 2px;
-    font-size: 0.9rem;
-}
-
-#buttons {
-    margin-top: 1.5rem;
+.buttons {
     display: flex;
-    justify-content: space-around;
+    margin: 0 auto;
+    gap: 10px;
 }
 
-button {
-    font-size: 28px;
-    width: 150px;
+.btn {
+    width: 100%;
     height: 50px;
-    border: 1px solid black;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-    margin: 10px 10px 10px 0;
+    font-size: 25px;
+}
+.wrapper-modal {
+    margin: 0 auto;
+}
+.modal-body {
+    text-align: justify;
+}
+li{
+    font-size: 20px;
 }
 
-button:active {
-    box-shadow: none;
-
-}
-button:hover {
-    background-color: #262626;
-    color: white;
-}
-button:focus {
-    background-color: #262626;
-    color: white;
-}
-.prompt {
-    background-color: #fdfdfd;
-    color: black;
-    margin-left: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-
-}
-.commerce > p{
-    border: 3px solid black;
-    border-radius: 5px;
-    color: black;
-    font-size: 28px;
-}
-.prompt > h1{
-    font-size: 28px;
+.modal-content {
+    position: relative;
+    width: auto;
 }

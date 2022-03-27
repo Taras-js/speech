@@ -12,7 +12,7 @@ recognition.lang = "ru-RU";
 recognition.onstart = () => {
     console.log("Распознавание голоса запущено");
 };
-recognition.onerror = ({ error }) => {
+recognition.onerror = ({error}) => {
     console.error(error);
 };
 recognition.onend = () => {
@@ -30,42 +30,360 @@ recognition.onresult = (e) => {
             const data = new Date()
             const textResult = {
                 id: data,
-                text: result.trim()
+                text: result.trim().toLowerCase()
             }
             array.push(textResult)
-
-            const find = array.find(item => {
-                if(item.text === 'коммерческое предложение')
-                {const html = document.querySelector('.commerce')
-                    return html.innerHTML = `<p>Предложение о сотрудничестве
-                        Уважаемый Ф.И.О.!<br>
-                        Меня зовут Ф.И.О.. <br>
-                        Моя компания _______________ занимается поставкой компьютеров <br>
-                        и комплектующих и программного обеспечения с ______года.<br>
-                        За время деятельности мы осуществили поставки более _________клиентам. <br>
-                        Среди них ________________.
-                        Мы продаем компьютеры известных мировых брендов _____________ <br>
-                        и программное обеспечение всемирно известных компаний _______________.<br>
-                        Сотрудничая с нами, вы получите самое современное и качественное оборудование<br> 
-                        в короткие сроки. Поставки осуществляем за один день — для товаров со склада и до <br>
-                        нескольких дней — для товаров под заказ.
-                        Мы заинтересованы в долгосрочном взаимовыгодном партнерстве и готовы представить<br>
-                         Вашему вниманию низкие цены и высокое качество обслуживания.
-                        Буду рад сотрудничать, жду Ваш ответ в ближайшее время.
-                        Если возникнут вопросы, буду рад ответить на них. Мои координаты.</p>`
-                }})
             console.log('array:', array)
-            console.log('find:', find)
-        } else {
-            interim_transcript += e.results[i][0].transcript;
-
+            findWord(array)
         }
-    }
-    final_transcript = editFinal(final_transcript);
-    final_text.value = final_transcript;
-    interim_text.value = interim_transcript;
-};
 
+        interim_transcript += e.results[i][0].transcript;
+        final_transcript = editFinal(final_transcript);
+        final_text.value = final_transcript;
+        interim_text.value = interim_transcript;
+    }
+
+
+};
+const findWord = () => {
+    array.find(item => {
+        // =================Брак=========================
+            if (item.text.includes('брак')) {
+                const prompt = document.querySelector('.prompt')
+                prompt.innerHTML = `
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Брак</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3><strong> Ответ: </strong></h3>
+        <h5> К сожалению форс - мажоры могут случится по любому бренду рынка; Качество - это конечно важно</h5>
+        <ol> <h3><strong> Вопросы: </strong></h3>
+        <li>Какие бренды обычно покупаете?</li>
+        <li>Что для Вас - идеальный бренд?</li>
+        <li>Случались ли рекламации по брендам сегмента PREMIUM?</li>
+        <li>Откуда такая информация?</li>
+        </ol>
+      </div>
+    </div>
+  </div>`
+                const btnClose = document.querySelector('.btn-close')
+                btnClose.addEventListener('click', () => {
+                    prompt.innerHTML = ''
+                })
+            }
+            //==========Работа без оплаты=======================
+            if (item.text.includes('работа без оплаты')) {
+                const prompt = document.querySelector('.prompt')
+                prompt.innerHTML = `
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Работа без оплаты</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3><strong> Ответ: </strong></h3>
+        <h5> Меньше рисков - больше спокойствия!</h5>
+        <ol> <h3><strong> Вопросы: </strong></h3>
+        <li>Все ли дистрибьютеры и  импортеры компенсируют работы по гарантийных случаях?</li>
+        <li>Вы знаете про условия компенсации работ? Хотите расскажу поподробнее?</li>
+        <li>Пробовали ли вы делать наценку более 50% по нашим брендам?</li>
+        <li>Сколько у Вас было рекламаций и по каким ТГ?</li>
+        </ol>
+      </div>
+    </div>
+  </div>`
+                const btnClose = document.querySelector('.btn-close')
+                btnClose.addEventListener('click', () => {
+                    prompt.innerHTML = ''
+                })
+            }
+            //============Другие бренды========================
+        if (item.text.includes('другие бренды')) {
+            const prompt = document.querySelector('.prompt')
+            prompt.innerHTML = `
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Другие бренды</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3><strong> Ответ: </strong></h3>
+        <h5>Все мои клиенты тоже работают только с проверенным ассортиментом! </h5>
+        <h3><strong> Вопросы: </strong></h3>
+        <ol> 
+        <li>Как вводите новые бренды, на что ориентируетесь?</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        </ol>
+      </div>
+    </div>
+  </div>`
+            const btnClose = document.querySelector('.btn-close')
+            btnClose.addEventListener('click', () => {
+                prompt.innerHTML = ''
+            })
+        }
+        //================Китай===================
+        if (item.text.includes('китай')) {
+            const prompt = document.querySelector('.prompt')
+            prompt.innerHTML = `
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Китай</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3><strong> Ответ: </strong></h3>
+        <h5>Ассоциация, конечно, негативная. По Японии и Корее раньше было также! </h5>
+        <h3><strong> Вопросы: </strong></h3>
+        <ol> 
+        <li>Что именно Вас смущает?</li>
+        <li>Как качество связано со страной производства?</li>
+        <li></li>
+        <li></li>
+        </ol>
+      </div>
+    </div>
+  </div>`
+            const btnClose = document.querySelector('.btn-close')
+            btnClose.addEventListener('click', () => {
+                prompt.innerHTML = ''
+            })
+        }
+//================Уже покупаем===================
+            if (item.text.includes('уже покупаем')) {
+                const prompt = document.querySelector('.prompt')
+                prompt.innerHTML = `
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Уже покупаем</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3><strong> Ответ: </strong></h3>
+        <h5>Отличное решение, почти все мои клиенты это делают! </h5>
+        <h3><strong> Вопросы: </strong></h3>
+        <ol> 
+        <li>Чем помочь в продажах?</li>
+        <li>Знаете ли вы про наши дополнительные условия?</li>
+        <li>Что нибудь слышали про линейку HARDIG?</li>
+        <li>Какой информации не хватает для увеличения Вашей прибыли по бренду?</li>
+        </ol>
+      </div>
+    </div>
+  </div>`
+                const btnClose = document.querySelector('.btn-close')
+                btnClose.addEventListener('click', () => {
+                    prompt.innerHTML = ''
+                })
+            }
+            //================Под заказ===================
+            if (item.text.includes('под заказ')) {
+                const prompt = document.querySelector('.prompt')
+                prompt.innerHTML = `
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Под заказ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3><strong> Ответ: </strong></h3>
+        <h5>Прогрессивный и знающий  видимо клиент! </h5>
+        <h3><strong> Вопросы: </strong></h3>
+        <ol> 
+        <li>Что знаете про бренд?</li>
+        <li>Какой информации у вас не хватает по бренду?</li>
+        <li>Какая линейка?</li>
+        <li></li>
+        </ol>
+      </div>
+    </div>
+  </div>`
+                const btnClose = document.querySelector('.btn-close')
+                btnClose.addEventListener('click', () => {
+                    prompt.innerHTML = ''
+                })
+            }
+            //================Плохой бренд===================
+            if (item.text.includes('плохой бренд')) {
+                const prompt = document.querySelector('.prompt')
+                prompt.innerHTML = `
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Плохой бренд</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3><strong> Ответ: </strong></h3>
+        <h5>Качество это конечно важно! </h5>
+        <h3><strong> Вопросы: </strong></h3>
+        <ol> 
+        <li>Откуда такая информация?</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        </ol>
+      </div>
+    </div>
+  </div>`
+                const btnClose = document.querySelector('.btn-close')
+                btnClose.addEventListener('click', () => {
+                    prompt.innerHTML = ''
+                })
+            }
+            //================Изменилось качество===================
+            if (item.text.includes('изменилось качество')) {
+                const prompt = document.querySelector('.prompt')
+                prompt.innerHTML = `
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Изменилось качество</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3><strong> Ответ: </strong></h3>
+        <h5>Качество это конечно важно, форс - мажоры иногда случаются!</h5>
+        <h3><strong> Вопросы: </strong></h3>
+        <ol> 
+        <li>Какие рекламации?</li>
+        <li>Какие товарные группы покупали?</li>
+        <li>Вы слышали про оплату снятия/установки?</li>
+        <li>У вас по другим брендам совсем не бывает рекламаций?</li>
+        </ol>
+      </div>
+    </div>
+  </div>`
+                const btnClose = document.querySelector('.btn-close')
+                btnClose.addEventListener('click', () => {
+                    prompt.innerHTML = ''
+                })
+            }
+            //================Стало больше брака===================
+            if (item.text.includes('стало больше брака')) {
+                const prompt = document.querySelector('.prompt')
+                prompt.innerHTML = `
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Стало больше брака</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3><strong> Ответ: </strong></h3>
+        <h5>Очень многие клиенты покупают синюю линейку в больших объемах!</h5>
+        <h3><strong> Вопросы: </strong></h3>
+        <ol> 
+        <li>Откуда такая информация?</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        </ol>
+      </div>
+    </div>
+  </div>`
+                const btnClose = document.querySelector('.btn-close')
+                btnClose.addEventListener('click', () => {
+                    prompt.innerHTML = ''
+                })
+            }
+            //================Не соответствуют размеры===================
+            if (item.text.includes('не соответствует размеры')) {
+                const prompt = document.querySelector('.prompt')
+                prompt.innerHTML = `
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Не соответствуют размеры</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3><strong> Ответ: </strong></h3>
+        <h5>Точность современного производства доходит уже не до миллиметров, а до микрон или точнее...!</h5>
+        <h3><strong> Вопросы: </strong></h3>
+        <ol> 
+        <li>Какая товарная группа, какой артикул?</li>
+        <li>Как кроссировали, где подбирали?</li>
+        <li>Вы знаете, что бренд и его правильные кроссы есть в Текдок?</li>
+        <li></li>
+        </ol>
+      </div>
+    </div>
+  </div>`
+                const btnClose = document.querySelector('.btn-close')
+                btnClose.addEventListener('click', () => {
+                    prompt.innerHTML = ''
+                })
+            }
+            //================Не большой ресурс===================
+            if (item.text.includes('небольшой ресурс')) {
+                const prompt = document.querySelector('.prompt')
+                prompt.innerHTML = `
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Не большой ресурс</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3><strong> Ответ: </strong></h3>
+        <h5>Спокойствие за ресурс при любых условиях установки и эксплуатации часто бывает актуальным!</h5>
+        <h3><strong> Вопросы: </strong></h3>
+        <ol> 
+        <li>Откуда такая информация?</li>
+        <li>Какой пробег?</li>
+        <li>Какая линейка?</li>
+        <li></li>
+        </ol>
+      </div>
+    </div>
+  </div>`
+                const btnClose = document.querySelector('.btn-close')
+                btnClose.addEventListener('click', () => {
+                    prompt.innerHTML = ''
+                })
+            }
+            //================Нет смазки===================
+            if (item.text.includes('нет смазки')) {
+                const prompt = document.querySelector('.prompt')
+                prompt.innerHTML = `
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Нет смазки</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3><strong> Ответ: </strong></h3>
+        <h5>Каждый должен заниматься своим делом!</h5>
+        <h3><strong> Вопросы: </strong></h3>
+        <ol> 
+        <li>Что именно необходимо из смазочных?</li>
+        <li>Для каких целей используется смазка в Вашем случае?</li>
+        <li>Чем помочь по вопросу?</li>
+        <li></li>
+        </ol>
+      </div>
+    </div>
+  </div>`
+                const btnClose = document.querySelector('.btn-close')
+                btnClose.addEventListener('click', () => {
+                    prompt.innerHTML = ''
+                })
+            }
+        }
+    )
+}
 const DICTIONARY = {
     точка: ".",
     запятая: ",",
@@ -91,8 +409,8 @@ function editFinal(s) {
     return s.replace(/\s([\.+,?!:-])/g, "$1");
 }
 
-buttons.onclick = ({ target }) => {
-    switch (target.className) {
+buttons.onclick = ({target}) => {
+    switch (target.id) {
         case "start":
             final_transcript = "";
             recognition.start();

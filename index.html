@@ -2,26 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Title</title>
+    <title>ISALES</title>
 </head>
 <body>
 <div id="wrapper" class="wrapper">
-    <div> <h1>Speech Recognition - Dictaphone</h1>
-    <textarea id="final_text" cols="30" rows="5" placeholder="КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ"></textarea>
-    <input type="text" id="interim_text" placeholder="Здесь начинается первоначальная обработка текста"/>
-    <div id="buttons">
-        <button class="start">Старт</button>
-        <button class="stop">Стоп</button>
-        <button class="abort">Сброс</button>
-        <button class="copy">Копия</button>
-        <button class="clear">Очистить</button>
-    </div>
+    <h3 class="header"><strong>Personal assistant manager ISALES</strong></h3>
+    <div id="buttons" class="buttons">
+        <button id="start" class="btn btn-primary">Старт</button>
+        <button id="stop" class="btn btn-primary">Стоп</button>
+
     </div>
     <div class="prompt">
-        <h1> <strong>Текст подсказки(отобразится когда нажмешь кнопку старт и четко произнесешь "коммерческое предложение")</strong> </h1>
-        <div class="commerce"></div>
+<!--        <div class="marriage"></div>-->
+<!--        <div class="work-without-pay"></div>-->
+<!--        <div class="other-brands"></div>-->
+<!--        <div class="china"></div>-->
+<!--        <div class="already-buying"></div>-->
+<!--        <div class="on-order"></div>-->
+<!--        <div class="bad-brand"></div>-->
+<!--        <div class="quality-has-changed"></div>-->
+<!--        <div class="more-marriage"></div>-->
+<!--        <div class="sizes-do-not-match"></div>-->
+<!--        <div class="not-a-great-resource"></div>-->
+<!--        <div class="no-lubrication"></div>-->
     </div>
+<!--    </div>-->
+<!--        <textarea id="final_text" cols="30" rows="3" placeholder="Ключевые слова"></textarea>-->
+<!--        <input type="text" id="interim_text" placeholder="Ключевые слова"/>-->
+<!--    </div>-->
+<!--<div>-->
+<!--    <button id="abort" class="btn btn-primary" disabled>Сброс</button>-->
+<!--    <button id="copy" class="btn btn-primary" disabled>Копия</button>-->
+<!--    <button id="clear" class="btn btn-primary" disabled>Очистить</button>-->
 </div>
     <script src="app.js"></script>
 
