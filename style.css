@@ -3,12 +3,14 @@ body {
     height: 100vh;
     background-color: gray;
 }
+
 .header {
     color: white;
     font-size: 50px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
 .wrapper {
 
     margin: 0 auto;
@@ -28,30 +30,32 @@ body {
     font-size: 40px;
     margin-bottom: 3rem;
 }
+
 .wrapper-modal {
     margin: 0 auto;
 }
+
 .modal-body {
     text-align: justify;
 }
-li{
+
+li {
     font-size: 20px;
 }
 
 .modal-content {
     position: relative;
-
 }
 
 h5 {
     font-size: 40px;
-
 }
-.card-text li{
+
+.card-text li {
     text-align: justify;
     font-size: 40px;
-
 }
+
 .modal-header {
     font-size: 45px;
 }

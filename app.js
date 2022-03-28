@@ -35,6 +35,7 @@ recognition.onresult = (e) => {
             array.push(textResult)
             console.log('array:', array)
             findWord(array)
+
         }
 
         interim_transcript += e.results[i][0].transcript;
@@ -95,6 +96,7 @@ const findWord = () => {
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
                     prompt.innerHTML = startText
+                    array.length = 0
                 })
             }
             //==========Работа без оплаты=======================
@@ -122,6 +124,7 @@ const findWord = () => {
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
                     prompt.innerHTML = startText
+                    array.length = 0
                 })
             }
             //============Другие бренды========================
@@ -150,6 +153,7 @@ const findWord = () => {
             const btnClose = document.querySelector('.btn-close')
             btnClose.addEventListener('click', () => {
                 prompt.innerHTML = startText
+                array.length = 0
             })
         }
         //================Китай===================
@@ -178,6 +182,7 @@ const findWord = () => {
             const btnClose = document.querySelector('.btn-close')
             btnClose.addEventListener('click', () => {
                 prompt.innerHTML = startText
+                array.length = 0
             })
         }
 //================Уже покупаем===================
@@ -206,6 +211,7 @@ const findWord = () => {
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
                     prompt.innerHTML = startText
+                    array.length = 0
                 })
             }
             //================Под заказ===================
@@ -234,6 +240,7 @@ const findWord = () => {
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
                     prompt.innerHTML = startText
+                    array.length = 0
                 })
             }
             //================Плохой бренд===================
@@ -262,6 +269,7 @@ const findWord = () => {
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
                     prompt.innerHTML = startText
+                    array.length = 0
                 })
             }
             //================Изменилось качество===================
@@ -290,6 +298,7 @@ const findWord = () => {
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
                     prompt.innerHTML = startText
+                    array.length = 0
                 })
             }
             //================Стало больше возвратов===================
@@ -318,6 +327,7 @@ const findWord = () => {
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
                     prompt.innerHTML = startText
+                    array.length = 0
                 })
             }
             //================Не соответствуют размеры===================
@@ -346,7 +356,9 @@ const findWord = () => {
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
                     prompt.innerHTML = startText
+                    array.length = 0
                 })
+
             }
             //================Не большой ресурс===================
             if (item.text.includes('небольшой ресурс')) {
@@ -374,6 +386,7 @@ const findWord = () => {
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
                     prompt.innerHTML = startText
+                    array.length = 0
                 })
             }
             //================Нет смазки===================
@@ -402,11 +415,13 @@ const findWord = () => {
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
                     prompt.innerHTML = startText
+                    array.length = 0
                 })
             }
         }
     )
 }
+
 const DICTIONARY = {
     точка: ".",
     запятая: ",",
