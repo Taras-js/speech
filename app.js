@@ -72,7 +72,7 @@ const findWord = () => {
         </div>`
 
     array.find(item => {
-        // =================Брак=======================
+            // =================Брак=======================
             if (item.text.includes('брак')) {
                 const prompt = document.querySelector('.prompt')
                 prompt.innerHTML = `
@@ -129,9 +129,9 @@ const findWord = () => {
                 })
             }
             //============Другие бренды========================
-        if (item.text.includes('другие бренды')) {
-            const prompt = document.querySelector('.prompt')
-            prompt.innerHTML = `
+            if (item.text.includes('другие бренды')) {
+                const prompt = document.querySelector('.prompt')
+                prompt.innerHTML = `
   <div class="card text-center">
     <div class="modal-content">
       <div class="modal-header">
@@ -151,16 +151,16 @@ const findWord = () => {
       </div>
     </div>
   </div>`
-            const btnClose = document.querySelector('.btn-close')
-            btnClose.addEventListener('click', () => {
-                prompt.innerHTML = startText
-                array.length = 0
-            })
-        }
-        //================Китай===================
-        if (item.text.includes('китай')) {
-            const prompt = document.querySelector('.prompt')
-            prompt.innerHTML = `
+                const btnClose = document.querySelector('.btn-close')
+                btnClose.addEventListener('click', () => {
+                    prompt.innerHTML = startText
+                    array.length = 0
+                })
+            }
+            //================Китай===================
+            if (item.text.includes('китай')) {
+                const prompt = document.querySelector('.prompt')
+                prompt.innerHTML = `
   <div class="card text-center">
     <div class="modal-content">
       <div class="modal-header">
@@ -180,12 +180,12 @@ const findWord = () => {
       </div>
     </div>
   </div>`
-            const btnClose = document.querySelector('.btn-close')
-            btnClose.addEventListener('click', () => {
-                prompt.innerHTML = startText
-                array.length = 0
-            })
-        }
+                const btnClose = document.querySelector('.btn-close')
+                btnClose.addEventListener('click', () => {
+                    prompt.innerHTML = startText
+                    array.length = 0
+                })
+            }
 //================Уже покупаем===================
             if (item.text.includes('уже покупаем')) {
                 const prompt = document.querySelector('.prompt')
@@ -481,37 +481,3 @@ buttons.onclick = ({target}) => {
     }
 };
 
-/*
-SpeechRecognitionEvent
-  bubbles: false
-  cancelBubble: false
-  cancelable: false
-  composed: false
-  currentTarget: SpeechRecognition {grammars: SpeechGrammarList, lang: "ru-RU", continuous: true, interimResults: true, maxAlternatives: 3, …}
-  defaultPrevented: false
-  emma: null
-  eventPhase: 0
-  interpretation: null
-  isTrusted: true
-  path: []
-  resultIndex: 1
-  // здесь нас интересуют только результаты
-  results: SpeechRecognitionResultList {0: SpeechRecognitionResult, 1: SpeechRecognitionResult, length: 2}
-  returnValue: true
-  srcElement: SpeechRecognition {grammars: SpeechGrammarList, lang: "ru-RU", continuous: true, interimResults: true, maxAlternatives: 3, …}
-  target: SpeechRecognition {grammars: SpeechGrammarList, lang: "ru-RU", continuous: true, interimResults: true, maxAlternatives: 3, …}
-  timeStamp: 59862.61999979615
-  type: "result"
-*/
-
-/*
-results: SpeechRecognitionResultList
-  0: SpeechRecognitionResult
-    0: SpeechRecognitionAlternative
-      confidence: 0.7990190982818604
-      transcript: "привет"
-    isFinal: true
-    length: 1
-  length: 1
-
- */

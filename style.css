@@ -2,7 +2,7 @@ body {
     position: relative;
     height: 100%;
 
-    background-color: rgba(30,146,255,0.76);
+    background-color: rgba(30, 146, 255, 0.76);
 }
 
 .header {
@@ -64,21 +64,26 @@ h5 {
 .modal-header {
     font-size: 45px;
 }
+
 .prompt {
     padding: 10px;
     height: 90vh;
 }
+
 .modal-header {
     display: flex;
 }
+
 .card {
     border-radius: 30px;
     height: 90%;
 }
+
 .modal-content {
     border-radius: 30px;
     height: 100%;
 }
+
 .card-header {
 
     height: 100%;
