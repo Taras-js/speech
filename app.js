@@ -46,12 +46,35 @@ recognition.onresult = (e) => {
 
 };
 const findWord = () => {
+    const startText = ` <div class="card text-center">
+            <div class="card-header">
+                <div class="card-body">
+                    <h5 class="card-title">Keywords</h5>
+                    <ol class="card-text">
+                        <li>Брак</li>
+                        <li>Работа без оплаты</li>
+                        <li>Другие бренды</li>
+                        <li>Китай</li>
+                        <li>Уже покупаем</li>
+                        <li>Под заказ</li>
+                        <li>Плохой бренд</li>
+                        <li>Изменилось качество</li>
+                        <li>Стало больше возвратов</li>
+                        <li>Не соответствуют размеры</li>
+                        <li>Не большой ресурс</li>
+                        <li>Нет смазки</li>
+                    </ol>
+
+                </div>
+            </div>
+        </div>`
+
     array.find(item => {
         // =================Брак=========================
             if (item.text.includes('брак')) {
                 const prompt = document.querySelector('.prompt')
                 prompt.innerHTML = `
-  <div class="modal-dialog">
+  <div class="card text-center">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Брак</h5>
@@ -59,8 +82,8 @@ const findWord = () => {
       </div>
       <div class="modal-body">
         <h3><strong> Ответ: </strong></h3>
-        <h5> К сожалению форс - мажоры могут случится по любому бренду рынка; Качество - это конечно важно</h5>
-        <ol> <h3><strong> Вопросы: </strong></h3>
+        <h5> К сожалению форс - мажоры могут случится по любому бренду рынка. Качество - это конечно важно!</h5>
+        <ol class="card-text"> <h3><strong> Вопросы: </strong></h3>
         <li>Какие бренды обычно покупаете?</li>
         <li>Что для Вас - идеальный бренд?</li>
         <li>Случались ли рекламации по брендам сегмента PREMIUM?</li>
@@ -71,14 +94,14 @@ const findWord = () => {
   </div>`
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
-                    prompt.innerHTML = ''
+                    prompt.innerHTML = startText
                 })
             }
             //==========Работа без оплаты=======================
             if (item.text.includes('работа без оплаты')) {
                 const prompt = document.querySelector('.prompt')
                 prompt.innerHTML = `
-  <div class="modal-dialog">
+  <div class="card text-center">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Работа без оплаты</h5>
@@ -87,7 +110,7 @@ const findWord = () => {
       <div class="modal-body">
         <h3><strong> Ответ: </strong></h3>
         <h5> Меньше рисков - больше спокойствия!</h5>
-        <ol> <h3><strong> Вопросы: </strong></h3>
+        <ol class="card-text"> <h3><strong> Вопросы: </strong></h3>
         <li>Все ли дистрибьютеры и  импортеры компенсируют работы по гарантийных случаях?</li>
         <li>Вы знаете про условия компенсации работ? Хотите расскажу поподробнее?</li>
         <li>Пробовали ли вы делать наценку более 50% по нашим брендам?</li>
@@ -98,14 +121,14 @@ const findWord = () => {
   </div>`
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
-                    prompt.innerHTML = ''
+                    prompt.innerHTML = startText
                 })
             }
             //============Другие бренды========================
         if (item.text.includes('другие бренды')) {
             const prompt = document.querySelector('.prompt')
             prompt.innerHTML = `
-  <div class="modal-dialog">
+  <div class="card text-center">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Другие бренды</h5>
@@ -115,7 +138,7 @@ const findWord = () => {
         <h3><strong> Ответ: </strong></h3>
         <h5>Все мои клиенты тоже работают только с проверенным ассортиментом! </h5>
         <h3><strong> Вопросы: </strong></h3>
-        <ol> 
+        <ol class="card-text"> 
         <li>Как вводите новые бренды, на что ориентируетесь?</li>
         <li></li>
         <li></li>
@@ -126,14 +149,14 @@ const findWord = () => {
   </div>`
             const btnClose = document.querySelector('.btn-close')
             btnClose.addEventListener('click', () => {
-                prompt.innerHTML = ''
+                prompt.innerHTML = startText
             })
         }
         //================Китай===================
         if (item.text.includes('китай')) {
             const prompt = document.querySelector('.prompt')
             prompt.innerHTML = `
-  <div class="modal-dialog">
+  <div class="card text-center">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Китай</h5>
@@ -143,7 +166,7 @@ const findWord = () => {
         <h3><strong> Ответ: </strong></h3>
         <h5>Ассоциация, конечно, негативная. По Японии и Корее раньше было также! </h5>
         <h3><strong> Вопросы: </strong></h3>
-        <ol> 
+        <ol class="card-text"> 
         <li>Что именно Вас смущает?</li>
         <li>Как качество связано со страной производства?</li>
         <li></li>
@@ -154,14 +177,14 @@ const findWord = () => {
   </div>`
             const btnClose = document.querySelector('.btn-close')
             btnClose.addEventListener('click', () => {
-                prompt.innerHTML = ''
+                prompt.innerHTML = startText
             })
         }
 //================Уже покупаем===================
             if (item.text.includes('уже покупаем')) {
                 const prompt = document.querySelector('.prompt')
                 prompt.innerHTML = `
-  <div class="modal-dialog">
+  <div class="card text-center">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Уже покупаем</h5>
@@ -171,7 +194,7 @@ const findWord = () => {
         <h3><strong> Ответ: </strong></h3>
         <h5>Отличное решение, почти все мои клиенты это делают! </h5>
         <h3><strong> Вопросы: </strong></h3>
-        <ol> 
+        <ol class="card-text">
         <li>Чем помочь в продажах?</li>
         <li>Знаете ли вы про наши дополнительные условия?</li>
         <li>Что нибудь слышали про линейку HARDIG?</li>
@@ -182,14 +205,14 @@ const findWord = () => {
   </div>`
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
-                    prompt.innerHTML = ''
+                    prompt.innerHTML = startText
                 })
             }
             //================Под заказ===================
             if (item.text.includes('под заказ')) {
                 const prompt = document.querySelector('.prompt')
                 prompt.innerHTML = `
-  <div class="modal-dialog">
+  <div class="card text-center">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Под заказ</h5>
@@ -199,7 +222,7 @@ const findWord = () => {
         <h3><strong> Ответ: </strong></h3>
         <h5>Прогрессивный и знающий  видимо клиент! </h5>
         <h3><strong> Вопросы: </strong></h3>
-        <ol> 
+        <ol class="card-text"> 
         <li>Что знаете про бренд?</li>
         <li>Какой информации у вас не хватает по бренду?</li>
         <li>Какая линейка?</li>
@@ -210,14 +233,14 @@ const findWord = () => {
   </div>`
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
-                    prompt.innerHTML = ''
+                    prompt.innerHTML = startText
                 })
             }
             //================Плохой бренд===================
             if (item.text.includes('плохой бренд')) {
                 const prompt = document.querySelector('.prompt')
                 prompt.innerHTML = `
-  <div class="modal-dialog">
+  <div class="card text-center">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Плохой бренд</h5>
@@ -227,7 +250,7 @@ const findWord = () => {
         <h3><strong> Ответ: </strong></h3>
         <h5>Качество это конечно важно! </h5>
         <h3><strong> Вопросы: </strong></h3>
-        <ol> 
+        <ol class="card-text"> 
         <li>Откуда такая информация?</li>
         <li></li>
         <li></li>
@@ -238,14 +261,14 @@ const findWord = () => {
   </div>`
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
-                    prompt.innerHTML = ''
+                    prompt.innerHTML = startText
                 })
             }
             //================Изменилось качество===================
             if (item.text.includes('изменилось качество')) {
                 const prompt = document.querySelector('.prompt')
                 prompt.innerHTML = `
-  <div class="modal-dialog">
+  <div class="card text-center">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Изменилось качество</h5>
@@ -255,7 +278,7 @@ const findWord = () => {
         <h3><strong> Ответ: </strong></h3>
         <h5>Качество это конечно важно, форс - мажоры иногда случаются!</h5>
         <h3><strong> Вопросы: </strong></h3>
-        <ol> 
+        <ol class="card-text"> 
         <li>Какие рекламации?</li>
         <li>Какие товарные группы покупали?</li>
         <li>Вы слышали про оплату снятия/установки?</li>
@@ -266,24 +289,24 @@ const findWord = () => {
   </div>`
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
-                    prompt.innerHTML = ''
+                    prompt.innerHTML = startText
                 })
             }
-            //================Стало больше брака===================
+            //================Стало больше возвратов===================
             if (item.text.includes('стало больше возвратов')) {
                 const prompt = document.querySelector('.prompt')
                 prompt.innerHTML = `
-  <div class="modal-dialog">
+  <div class="card text-center">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Стало больше брака</h5>
+        <h5 class="modal-title">Стало больше возвратов</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <h3><strong> Ответ: </strong></h3>
         <h5>Очень многие клиенты покупают синюю линейку в больших объемах!</h5>
         <h3><strong> Вопросы: </strong></h3>
-        <ol> 
+        <ol class="card-text"> 
         <li>Откуда такая информация?</li>
         <li></li>
         <li></li>
@@ -294,14 +317,14 @@ const findWord = () => {
   </div>`
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
-                    prompt.innerHTML = ''
+                    prompt.innerHTML = startText
                 })
             }
             //================Не соответствуют размеры===================
             if (item.text.includes('не соответствует размеры')) {
                 const prompt = document.querySelector('.prompt')
                 prompt.innerHTML = `
-  <div class="modal-dialog">
+  <div class="card text-center">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Не соответствуют размеры</h5>
@@ -311,7 +334,7 @@ const findWord = () => {
         <h3><strong> Ответ: </strong></h3>
         <h5>Точность современного производства доходит уже не до миллиметров, а до микрон или точнее...!</h5>
         <h3><strong> Вопросы: </strong></h3>
-        <ol> 
+        <ol class="card-text">
         <li>Какая товарная группа, какой артикул?</li>
         <li>Как кроссировали, где подбирали?</li>
         <li>Вы знаете, что бренд и его правильные кроссы есть в Текдок?</li>
@@ -322,14 +345,14 @@ const findWord = () => {
   </div>`
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
-                    prompt.innerHTML = ''
+                    prompt.innerHTML = startText
                 })
             }
             //================Не большой ресурс===================
             if (item.text.includes('небольшой ресурс')) {
                 const prompt = document.querySelector('.prompt')
                 prompt.innerHTML = `
-  <div class="modal-dialog">
+  <div class="card text-center">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Не большой ресурс</h5>
@@ -339,7 +362,7 @@ const findWord = () => {
         <h3><strong> Ответ: </strong></h3>
         <h5>Спокойствие за ресурс при любых условиях установки и эксплуатации часто бывает актуальным!</h5>
         <h3><strong> Вопросы: </strong></h3>
-        <ol> 
+        <ol class="card-text"> 
         <li>Откуда такая информация?</li>
         <li>Какой пробег?</li>
         <li>Какая линейка?</li>
@@ -350,24 +373,24 @@ const findWord = () => {
   </div>`
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
-                    prompt.innerHTML = ''
+                    prompt.innerHTML = startText
                 })
             }
             //================Нет смазки===================
             if (item.text.includes('нет смазки')) {
                 const prompt = document.querySelector('.prompt')
                 prompt.innerHTML = `
-  <div class="modal-dialog">
+  <div class="card text-center">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Нет смазки</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <h3><strong> Ответ: </strong></h3>
+        <h5><strong> Ответ: </strong></h5>
         <h5>Каждый должен заниматься своим делом!</h5>
-        <h3><strong> Вопросы: </strong></h3>
-        <ol> 
+        <h5><strong> Вопросы: </strong></h5>
+        <ol class="card-text"> 
         <li>Что именно необходимо из смазочных?</li>
         <li>Для каких целей используется смазка в Вашем случае?</li>
         <li>Чем помочь по вопросу?</li>
@@ -378,7 +401,7 @@ const findWord = () => {
   </div>`
                 const btnClose = document.querySelector('.btn-close')
                 btnClose.addEventListener('click', () => {
-                    prompt.innerHTML = ''
+                    prompt.innerHTML = startText
                 })
             }
         }
