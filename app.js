@@ -72,7 +72,7 @@ const findWord = () => {
         </div>`
 
     array.find(item => {
-        // =================Брак=========================
+        // =================Брак=======================
             if (item.text.includes('брак')) {
                 const prompt = document.querySelector('.prompt')
                 prompt.innerHTML = `
