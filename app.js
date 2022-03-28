@@ -47,7 +47,8 @@ recognition.onresult = (e) => {
 
 };
 const findWord = () => {
-    const startText = ` <div class="card text-center">
+    const startText = ` 
+ <div class="card text-center">
             <div class="card-header">
                 <div class="card-body">
                     <h5 class="card-title">Keywords</h5>
