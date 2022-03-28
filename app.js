@@ -270,7 +270,7 @@ const findWord = () => {
                 })
             }
             //================Стало больше брака===================
-            if (item.text.includes('стало больше брака')) {
+            if (item.text.includes('стало больше возвратов')) {
                 const prompt = document.querySelector('.prompt')
                 prompt.innerHTML = `
   <div class="modal-dialog">
